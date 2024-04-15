@@ -58,6 +58,11 @@
                         <Insets top="2.0" />
                      </opaqueInsets>
                   </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#pageLogin" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Login">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </left>

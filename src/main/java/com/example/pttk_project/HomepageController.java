@@ -28,6 +28,10 @@ public class HomepageController implements Initializable {
         loadpage("cv");
     }
     @FXML
+    private void pageLogin(MouseEvent event) throws IOException {
+        loadpage("login");
+    }
+    @FXML
     private void pageProfile(MouseEvent event) throws IOException {
         loadpage("profile");
     }
@@ -45,7 +49,7 @@ public class HomepageController implements Initializable {
     }
     @FXML
     private void pageContractExpires(MouseEvent event) throws IOException {
-        loadpage("contractExprires");
+        loadpage("contractExpires");
     }
     @FXML
     private void pageAddPolicy(MouseEvent event) throws IOException {
