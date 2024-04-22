@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+
 public class HomepageApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
