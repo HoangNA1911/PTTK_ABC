@@ -20,8 +20,8 @@
          <columns>
             <TableColumn fx:id="ma_thong_tin" prefWidth="40.0" text="STT" />
             <TableColumn fx:id="ma_doanh_nghiep" prefWidth="179.0" text="Tên doanh nghiệp" />
-            <TableColumn fx:id="ma_vi_tri" prefWidth="118.0" text="Vị trí ứng tuyển" />
-            <TableColumn fx:id="ma_hinh_thuc" prefWidth="253.0" text="Hình thức quảng cáo" />
+            <TableColumn fx:id="ma_vi_tri" prefWidth="163.0" text="Vị trí ứng tuyển" />
+            <TableColumn fx:id="ma_hinh_thuc" prefWidth="208.0" text="Hình thức quảng cáo" />
             <TableColumn fx:id="ngay_het_han" prefWidth="126.0" text="Ngày hết hạn" />
             <TableColumn prefWidth="69.0" text="Số hồ sơ" />
          </columns>

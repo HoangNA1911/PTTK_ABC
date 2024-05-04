@@ -6,6 +6,8 @@ import com.example.pttk_project.dao.connectionSQL;
 import com.example.pttk_project.dto.ThongTinDangTuyen;
 import com.example.pttk_project.dto.DoanhNghiep;
 import com.example.pttk_project.dto.ViTriUngTuyen;
+import com.example.pttk_project.dto.HinhThucQuangCao;
+
 
 
 import javafx.collections.FXCollections;
@@ -47,7 +49,7 @@ public class Recruitment {
         ma_thong_tin.setCellValueFactory(cellData -> cellData.getValue().ma_thong_tinproperty().asString());
         ma_doanh_nghiep.setCellValueFactory(cellData -> cellData.getValue().getDoanhNghiep().ten_ctyproperty());
         ma_vi_tri.setCellValueFactory(cellData -> cellData.getValue().getViTriUngTuyen().tenproperty());
-        ma_hinh_thuc.setCellValueFactory(cellData -> cellData.getValue().ma_hinh_thucproperty().asString());
+        ma_hinh_thuc.setCellValueFactory(cellData -> cellData.getValue().getHinhThucQuangCao().tenproperty());
         ngay_het_han.setCellValueFactory(cellData -> cellData.getValue().ngay_het_hanproperty().asString());
         ThongTinDangTuyenList = FXCollections.observableArrayList();
         loadThongTinDangTuyenFromDatabase();
@@ -58,7 +60,10 @@ public class Recruitment {
 //        Connection conn = null;
 //        CallableStatement cst = null;
 //        ResultSet rs = null;
-        String SELECT_QUERY = "SELECT ma_thong_tin, ten_cty,ten, ma_hinh_thuc, ngay_het_han FROM ThongTinDangTuyen tt join DoanhNghiep dn on tt.ma_doanh_nghiep  = dn.ma_doanh_nghiep join ViTriUngTuyen vt on vt.ma_vi_tri = tt.ma_vi_tri      ";
+        String SELECT_QUERY = "SELECT ma_thong_tin, ten_cty,vt.ten as tenVT, qc.ten as tenQC, ngay_het_han FROM ThongTinDangTuyen tt " +
+                "join DoanhNghiep dn on tt.ma_doanh_nghiep  = dn.ma_doanh_nghiep " +
+                "join ViTriUngTuyen vt on vt.ma_vi_tri = tt.ma_vi_tri " +
+                "join HinhThucQuangCao qc on qc.ma_hinh_thuc = tt.ma_hinh_thuc";
 
         try (Connection conn = new connectionSQL().getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(SELECT_QUERY)){
@@ -69,17 +74,22 @@ public class Recruitment {
                 ThongTinDangTuyen kh = new ThongTinDangTuyen();
                 DoanhNghiep hp = new DoanhNghiep();
                 ViTriUngTuyen vt = new ViTriUngTuyen();
+                HinhThucQuangCao qcc = new HinhThucQuangCao();
                 //System.out.println(kh);
 
                 String tenDN = rs.getString("ten_cty");
                 hp.setten_cty(tenDN);
                 kh.setDoanhNghiep(hp);
 
-                String vitriTuyen = rs.getString("ten");
+                String vitriTuyen = rs.getString("tenVT");
                 vt.setten(vitriTuyen);
-                kh.setDoanhNghiep(vt);
+                kh.setViTriUngTuyen(vt);
+
+                String hinhthucqc = rs.getString("tenQC");
+                qcc.setten(hinhthucqc);
+                kh.setHinhThucQuangCao(qcc);
+
                 kh.setma_thong_tin(rs.getInt("ma_thong_tin"));
-                kh.setma_hinh_thuc(rs.getInt("ma_hinh_thuc"));
                 kh.setngay_het_han(rs.getDate("ngay_het_han").toLocalDate());
                 ThongTinDangTuyenList.add(kh);
             }

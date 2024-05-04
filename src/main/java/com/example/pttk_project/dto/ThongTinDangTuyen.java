@@ -19,6 +19,7 @@ public class ThongTinDangTuyen  {
     private final SimpleIntegerProperty tiem_nang = new SimpleIntegerProperty();
     private final ObjectProperty<DoanhNghiep> DoanhNghiepProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<HinhThucQuangCao> HinhThucQuangCaoProperty = new SimpleObjectProperty<>();
 
 
     public ThongTinDangTuyen (){
@@ -145,12 +146,24 @@ public class ThongTinDangTuyen  {
         return ViTriUngTuyenProperty.get();
     }
 
-    public void setDoanhNghiep(ViTriUngTuyen ViTriUngTuyen) {
+    public void setViTriUngTuyen(ViTriUngTuyen ViTriUngTuyen) {
         this.ViTriUngTuyenProperty.set(ViTriUngTuyen);
     }
 
     public ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty() {
         return ViTriUngTuyenProperty;
+    }
+
+    public HinhThucQuangCao getHinhThucQuangCao() {
+        return HinhThucQuangCaoProperty.get();
+    }
+
+    public void setHinhThucQuangCao(HinhThucQuangCao HinhThucQuangCao) {
+        this.HinhThucQuangCaoProperty.set(HinhThucQuangCao);
+    }
+
+    public ObjectProperty<HinhThucQuangCao> HinhThucQuangCaoProperty() {
+        return HinhThucQuangCaoProperty;
     }
 
 }
