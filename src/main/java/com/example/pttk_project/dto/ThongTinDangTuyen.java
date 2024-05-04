@@ -15,17 +15,18 @@ public class ThongTinDangTuyen  {
     private final  SimpleObjectProperty<LocalDate> ngay_bat_dau = new  SimpleObjectProperty<>();
     private final SimpleStringProperty yeu_cau = new SimpleStringProperty();
     private final SimpleIntegerProperty ma_hinh_thuc = new SimpleIntegerProperty();
-    private final SimpleIntegerProperty ngay_het_han = new SimpleIntegerProperty();
+    private final SimpleObjectProperty<LocalDate> ngay_het_han = new  SimpleObjectProperty<>();
     private final SimpleIntegerProperty tiem_nang = new SimpleIntegerProperty();
+    private final ObjectProperty<DoanhNghiep> DoanhNghiepProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty = new SimpleObjectProperty<>();
 
 
     public ThongTinDangTuyen (){
 
     }
 
-    public ThongTinDangTuyen (String ma_thong_tin, String ma_doanh_nghiep, int ma_vi_tri, int so_luong, int ngay_bat_dau, String yeu_cau, int ma_hinh_thuc, int ngay_het_han, int tiem_nang, int DIEMTK){
+    public ThongTinDangTuyen (int ma_thong_tin, int ma_doanh_nghiep, int ma_vi_tri, int so_luong, LocalDate ngay_bat_dau, String yeu_cau, int ma_hinh_thuc, LocalDate ngay_het_han, int tiem_nang){
         this.ma_thong_tin.set(ma_thong_tin);
-        this.ma_doanh_nghiep.set(ma_doanh_nghiep);
         this.ma_vi_tri.set(ma_vi_tri);
         this.so_luong.set(so_luong);
         this.ngay_bat_dau.set(ngay_bat_dau);
@@ -33,26 +34,25 @@ public class ThongTinDangTuyen  {
         this.ma_hinh_thuc.set(ma_hinh_thuc);
         this.ngay_het_han.set(ngay_het_han);
         this.tiem_nang.set(tiem_nang);
-        this.DIEMTK.set(DIEMTK);
     }
 
-    public String getma_thong_tin(){
+    public int getma_thong_tin(){
         return ma_thong_tin.get();
     }
-    public void setma_thong_tin(String ma_thong_tin){
+    public void setma_thong_tin(int ma_thong_tin){
         this.ma_thong_tin.set(ma_thong_tin);
     }
-    public SimpleStringProperty ma_thong_tinproperty(){
+    public SimpleIntegerProperty ma_thong_tinproperty(){
         return ma_thong_tin;
     }
 
-    public String getma_doanh_nghiep(){
+    public int getma_doanh_nghiep(){
         return ma_doanh_nghiep.get();
     }
-    public void setma_doanh_nghiep(String ma_doanh_nghiep){
+    public void setma_doanh_nghiep(int ma_doanh_nghiep){
         this.ma_doanh_nghiep.set(ma_doanh_nghiep);
     }
-    public SimpleStringProperty ma_doanh_nghiepproperty(){
+    public SimpleIntegerProperty ma_doanh_nghiepproperty(){
         return ma_doanh_nghiep;
     }
 
@@ -76,13 +76,13 @@ public class ThongTinDangTuyen  {
         return so_luong;
     }
 
-    public int getngay_bat_dau(){
+    public LocalDate getngay_bat_dau(){
         return ngay_bat_dau.get();
     }
-    public void setngay_bat_dau(int ngay_bat_dau){
+    public void setngay_bat_dau(LocalDate ngay_bat_dau){
         this.ngay_bat_dau.set(ngay_bat_dau);
     }
-    public SimpleIntegerProperty ngay_bat_dauproperty(){
+    public SimpleObjectProperty<LocalDate>  ngay_bat_dauproperty(){
         return ngay_bat_dau;
     }
 
@@ -106,15 +106,15 @@ public class ThongTinDangTuyen  {
     public SimpleIntegerProperty ma_hinh_thucproperty(){
         return ma_hinh_thuc;
     }
-    public int getngay_het_han() {
+    public LocalDate getngay_het_han() {
         return ngay_het_han.get();
     }
 
-    public void setngay_het_han(int ngay_het_han) {
+    public void setngay_het_han(LocalDate ngay_het_han) {
         this.ngay_het_han.set(ngay_het_han);
     }
 
-    public SimpleIntegerProperty ngay_het_hanproperty(){
+    public SimpleObjectProperty<LocalDate>  ngay_het_hanproperty(){
         return ngay_het_han;
     }
     public int gettiem_nang() {
@@ -127,6 +127,30 @@ public class ThongTinDangTuyen  {
 
     public SimpleIntegerProperty tiem_nangproperty(){
         return tiem_nang;
+    }
+
+    public DoanhNghiep getDoanhNghiep() {
+        return DoanhNghiepProperty.get();
+    }
+
+    public void setDoanhNghiep(DoanhNghiep DoanhNghiep) {
+        this.DoanhNghiepProperty.set(DoanhNghiep);
+    }
+
+    public ObjectProperty<DoanhNghiep> DoanhNghiepProperty() {
+        return DoanhNghiepProperty;
+    }
+
+    public ViTriUngTuyen getViTriUngTuyen() {
+        return ViTriUngTuyenProperty.get();
+    }
+
+    public void setDoanhNghiep(ViTriUngTuyen ViTriUngTuyen) {
+        this.ViTriUngTuyenProperty.set(ViTriUngTuyen);
+    }
+
+    public ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty() {
+        return ViTriUngTuyenProperty;
     }
 
 }
