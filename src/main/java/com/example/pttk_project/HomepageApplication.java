@@ -16,6 +16,8 @@ public class HomepageApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HomepageApplication.class.getResource("homepage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        // them dong nay de lay duoc stylesheet
+        // scene.getStylesheets().add(getClass().getResource("styling.css").toExternalForm());
         stage.setTitle("ABC!");
         stage.setScene(scene);
         stage.show();
