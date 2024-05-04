@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.Recruitment">
+<AnchorPane prefHeight="542.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.Recruitment">
    <children>
-      <Label layoutX="285.0" layoutY="192.0" text="Recruitment" />
+      <TextField layoutX="110.0" layoutY="45.0" prefHeight="25.0" prefWidth="240.0" promptText="Tìm kiếm theo tên doanh nghiệp, vị trí " />
+      <Label layoutX="287.0" layoutY="14.0" text="DANH SÁCH QUẢNG CÁO">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="49.0" text="Tìm kiếm" />
+      <TableView layoutX="24.0" layoutY="77.0" prefHeight="442.0" prefWidth="786.0">
+         <columns>
+            <TableColumn prefWidth="40.0" text="STT" />
+            <TableColumn prefWidth="271.0" text="Tên doanh nghiệp" />
+            <TableColumn prefWidth="116.0" text="Vị trí ứng tuyển" />
+            <TableColumn prefWidth="163.0" text="Hình thức quảng cáo" />
+            <TableColumn prefWidth="126.0" text="Ngày bắt đầu" />
+            <TableColumn prefWidth="69.0" text="Số hồ sơ" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>
