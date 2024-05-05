@@ -1,27 +1,29 @@
 package com.example.pttk_project.dao;
 
-import com.example.pttk_project.dto.UsersDto;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class nhanVienDao {
+public class doanhNghiepDao {
 
-    private static final String SELECT_QUERY = "SELECT * FROM Users WHERE email = ? AND password = ?";
+    private static final String DANGKY_THONGTIN_DN_QUERY = "INSERT INTO DoanhNghiep (ten_cty, ms_thue, dia_chi, dai_dien, email) values (?, ?,?,?)";
 
-
-    public boolean login(UsersDto users) {
+    public boolean addDoanhNghiep(String tenCty, int msThue, String diaChi, String daiDien, String email){
         boolean isValid = false;
 
         // Khởi tạo kết nối
         try (Connection conn = new connectionSQL().getConnection();
-             PreparedStatement preparedStatement = conn.prepareStatement(SELECT_QUERY)) {
+             PreparedStatement preparedStatement = conn.prepareStatement(DANGKY_THONGTIN_DN_QUERY)) {
 
             // Thiết lập các tham số cho câu truy vấn
-            preparedStatement.setString(1, users.getEmail());
-            preparedStatement.setString(2, users.getPassword());
+            preparedStatement.setString(1, tenCty);
+            preparedStatement.setInt(2, msThue);
+            preparedStatement.setString(3, diaChi);
+            preparedStatement.setString(4, daiDien);
+            preparedStatement.setString(5, email);
+
+
 
             // Thực hiện câu truy vấn
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -37,5 +39,6 @@ public class nhanVienDao {
 
         return isValid;
     }
+    }
 
-}
+

@@ -15,7 +15,7 @@ public class connectionSQL {
 
     // Replace below database url, username and password with your actual database credentials
 
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:13306/HTQL_HoSo_UT?useSSL=false";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:13306/HTQL_HoSo_UT?allowPublicKeyRetrieval=true&useSSL=false";
     private static final String DATABASE_USERNAME = "root";
     private static final String DATABASE_PASSWORD = "123456aB";
 

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import com.example.pttk_project.dao.connectionSQL;
 import com.example.pttk_project.dao.nhanVienDao;
 import com.example.pttk_project.dao.ungVienDao;
+import com.example.pttk_project.dto.UsersDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -44,9 +45,6 @@ public class LoginService {
         Window owner = submitButton.getScene().getWindow();
 
 
-        System.out.println(emailIdField.getText());
-        System.out.println(passwordField.getText());
-
 
         if (emailIdField.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
@@ -62,19 +60,23 @@ public class LoginService {
         String emailId = emailIdField.getText();
         String password = passwordField.getText();
 
+        UsersDto loginUser = new UsersDto(emailId,password);
+
+
+
        if (isApplicant){
            ungVienDao loginUV = new ungVienDao();
            loginSuccess = loginUV.login(emailId,password);
        } else {
            nhanVienDao loginNV = new nhanVienDao();
-           loginSuccess = loginNV.login(emailId,password);
+           loginSuccess = loginNV.login(loginUser);
        }
 
         if (loginSuccess)
             showAlert(Alert.AlertType.CONFIRMATION, owner, "Login Successful!",
                 "Welcome " + emailIdField.getText());
         else showAlert(Alert.AlertType.CONFIRMATION, owner, "Login Unsuccessful",
-                "User does not exists");
+                "Email or password is invalid");
     }
 
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {

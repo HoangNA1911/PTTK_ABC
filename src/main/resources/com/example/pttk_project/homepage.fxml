@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.StackPane?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.HomepageController">
    <children>
       <BorderPane fx:id="bp" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../java/css/styling.css">
@@ -85,11 +86,21 @@
                </children></HBox>
          </top>
          <center>
-            <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label layoutX="216.0" layoutY="168.0" text="advertise" wrapText="true" />
-               </children>
-            </AnchorPane>
+
+
+
+               <!-- Phần nhỏ đè lên (foreground) -->
+               <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" >
+                  <children>
+                     <Label layoutX="216.0" layoutY="168.0" text="advertise" wrapText="true" />
+                  </children>
+                  <padding>
+                     <Insets top="40" right="40" bottom="40" left="40"/>
+                  </padding>
+               </AnchorPane>
+
+
+
          </center>
       </BorderPane>
    </children>
