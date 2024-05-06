@@ -52,8 +52,8 @@ public class HomepageController implements Initializable {
         loadpage("contractExpires");
     }
     @FXML
-    private void pageAddPolicy(MouseEvent event) throws IOException {
-        loadpage("addPolicy");
+    private void pagePolicyList(MouseEvent event) throws IOException {
+        loadpage("policyList");
     }
 
     private  void loadpage(String page) throws IOException {
