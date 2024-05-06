@@ -11,6 +11,7 @@ import com.example.pttk_project.dao.*;
 
 import java.util.List;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -56,46 +57,47 @@ public class xemCVService {
 
     private ObservableList<HoSoUngTuyen> HoSoUngTuyenList = FXCollections.observableArrayList();
     @FXML
-    public void initialize() {
+    public void initialize(int num) {
+        System.out.println("88");
         ma_ho_so.setCellValueFactory(cellData -> cellData.getValue().ma_ho_soproperty().asString());
         ten.setCellValueFactory(cellData -> cellData.getValue().getUngVien().tenproperty());
         email.setCellValueFactory(cellData -> cellData.getValue().getUngVien().emailproperty());
         trang_thai.setCellValueFactory(cellData -> cellData.getValue().trang_thaiproperty());
         level.setCellValueFactory(cellData -> cellData.getValue().levelproperty().asString());
-
+        System.out.println("2");
         HoSoUngTuyenList = FXCollections.observableArrayList();
         loadHoSoUngTuyenFromDatabase();
-
+        System.out.println("3");
     }
-    private void loadPage(String page) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pttk_project/" + page + ".fxml"));
-            Parent root = loader.load();
 
-            // Create a new stage
-            Stage popupStage = new Stage();
 
-            // Set the FXML content as the scene of the stage
-            Scene scene = new Scene(root);
-            popupStage.setScene(scene);
+    public void receiveSelectedRowData(int selectedRowData) {
+        // Process the received data herenhansuList.clear();
+        //        loadNhansuFromDatabase();
+        //        nhansuTableView.refresh();
+        System.out.println("Received selected row data: " + selectedRowData);
+        HoSoUngTuyenList.clear();
+        loadHoSoUngTuyenFromDatabase2(selectedRowData);
+        System.out.println("5");
 
-            // Set modality so that it blocks events to other windows
-            popupStage.initModality(Modality.APPLICATION_MODAL);
-
-            // Show the stage
-            popupStage.showAndWait();
-        } catch (IOException e) {
-            e.printStackTrace(); // Handle the exception properly
-        }
     }
 
 
     private void loadHoSoUngTuyenFromDatabase() {
         hoSoUngTuyenDao loader = new hoSoUngTuyenDao();
         List<HoSoUngTuyen> HoSoUngTuyenList = loader.getAllHoSoUngTuyen();
-        //System.out.println(ThongTinDangTuyenList);
-        // Assuming ThongTinDangTuyenList is a field in your class
-        // You should declare it as List<ThongTinDangTuyen> ThongTinDangTuyenList; at the class level
+
+        System.out.println("4");
+
+        HoSoUngTuyenTableView.setItems(FXCollections.observableList(HoSoUngTuyenList));
+
+    }
+
+    public void loadHoSoUngTuyenFromDatabase2(int num) {
+        hoSoUngTuyenDao loader = new hoSoUngTuyenDao();
+        List<HoSoUngTuyen> HoSoUngTuyenList = loader.getAllHoSoUngTuyen2(num);
+
+        System.out.println("6");
 
         HoSoUngTuyenTableView.setItems(FXCollections.observableList(HoSoUngTuyenList));
 

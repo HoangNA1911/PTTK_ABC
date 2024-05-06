@@ -3,10 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import com.example.pttk_project.dao.connectionSQL;
-import com.example.pttk_project.dto.ThongTinDangTuyen;
-import com.example.pttk_project.dto.DoanhNghiep;
-import com.example.pttk_project.dto.ViTriUngTuyen;
-import com.example.pttk_project.dto.HinhThucQuangCao;
+import com.example.pttk_project.dto.*;
 import com.example.pttk_project.dao.thongTinDangTuyenDao;
 import java.util.List;
 
@@ -69,17 +66,28 @@ public class XemTTDangTuyen_CV {
         ThongTinDangTuyenList = FXCollections.observableArrayList();
         loadThongTinDangTuyenFromDatabase();
         ThongTinDangTuyenTableView.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 1) { // Check for single click
+            if (event.getClickCount() == 2) { // Check for single click
                 ThongTinDangTuyen selectedThongTin = ThongTinDangTuyenTableView.getSelectionModel().getSelectedItem();
                 if (selectedThongTin != null) {
-                    // Call another DAO method with selectedThongTin data
-                    // Replace "AnotherDAOClass" with the actual name of your DAO class
-//                    AnotherDAOClass anotherDAO = new AnotherDAOClass();
-//                    anotherDAO.processSelectedThongTin(selectedThongTin);
-                    System.out.println(selectedThongTin);
-                    // Load another page
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pttk_project/NaBeo.fxml"));
+                    Parent root;
+                    try {
+                        root = loader.load();
+                        xemCVService anotherController = loader.getController();
+                        int num =1;
 
+                        num = selectedThongTin.getma_thong_tin();
+                        System.out.println(num);
+                        System.out.println("1");
+
+                        anotherController.receiveSelectedRowData(num);
                         loadPage("NaBeo"); // Assuming loadpage is a method to load pages
+                        // Load the new page
+
+                        System.out.println(" PUN");
+                    } catch (IOException e) {
+                        e.printStackTrace(); // Handle the exception properly
+                    }
 
                 }
             }
