@@ -17,7 +17,7 @@ public class ThongTinDangTuyen  {
     private final SimpleIntegerProperty ma_hinh_thuc = new SimpleIntegerProperty();
     private final SimpleObjectProperty<LocalDate> ngay_het_han = new  SimpleObjectProperty<>();
     private final SimpleIntegerProperty tiem_nang = new SimpleIntegerProperty();
-    private final ObjectProperty<DoanhNghiep> DoanhNghiepProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<doanhNghiepDto> DoanhNghiepProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<HinhThucQuangCao> HinhThucQuangCaoProperty = new SimpleObjectProperty<>();
 
@@ -130,15 +130,15 @@ public class ThongTinDangTuyen  {
         return tiem_nang;
     }
 
-    public DoanhNghiep getDoanhNghiep() {
+    public doanhNghiepDto getDoanhNghiep() {
         return DoanhNghiepProperty.get();
     }
 
-    public void setDoanhNghiep(DoanhNghiep DoanhNghiep) {
+    public void setDoanhNghiep(doanhNghiepDto DoanhNghiep) {
         this.DoanhNghiepProperty.set(DoanhNghiep);
     }
 
-    public ObjectProperty<DoanhNghiep> DoanhNghiepProperty() {
+    public ObjectProperty<doanhNghiepDto> DoanhNghiepProperty() {
         return DoanhNghiepProperty;
     }
 

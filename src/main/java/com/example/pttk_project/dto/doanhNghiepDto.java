@@ -7,7 +7,7 @@ public class doanhNghiepDto {
    String dai_dien;
    String email;
 
-    doanhNghiepDto(){
+    public doanhNghiepDto(){
 
     }
 

@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.pttk_project.dto.HinhThucQuangCao;
 import com.example.pttk_project.dto.ThongTinDangTuyen;
 import com.example.pttk_project.dto.ViTriUngTuyen;
+import com.example.pttk_project.dto.doanhNghiepDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,12 +31,12 @@ public class hoSoUngTuyenDao {
 
             while (rs.next()) {
                 ThongTinDangTuyen kh = new ThongTinDangTuyen();
-                DoanhNghiep hp = new DoanhNghiep();
+                doanhNghiepDto hp = new doanhNghiepDto();
                 ViTriUngTuyen vt = new ViTriUngTuyen();
                 HinhThucQuangCao qcc = new HinhThucQuangCao();
 
                 String tenDN = rs.getString("ten_cty");
-                hp.setten_cty(tenDN);
+                hp.setTen_cty(tenDN);
                 kh.setDoanhNghiep(hp);
 
                 String vitriTuyen = rs.getString("tenVT");
