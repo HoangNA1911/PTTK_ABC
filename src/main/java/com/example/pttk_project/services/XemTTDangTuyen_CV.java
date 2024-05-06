@@ -70,33 +70,35 @@ public class XemTTDangTuyen_CV {
                 ThongTinDangTuyen selectedThongTin = ThongTinDangTuyenTableView.getSelectionModel().getSelectedItem();
                 if (selectedThongTin != null) {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pttk_project/NaBeo.fxml"));
-                    Parent root;
                     try {
-                        root = loader.load();
+                        Parent root = loader.load();
                         xemCVService anotherController = loader.getController();
-                        int num =1;
 
-                        num = selectedThongTin.getma_thong_tin();
-                        System.out.println(num);
-                        System.out.println("1");
+                        // Assuming ma_thong_tin is an appropriate field in selectedThongTin
+                        int num = selectedThongTin.getma_thong_tin();
 
-                        anotherController.receiveSelectedRowData(num);
-                        loadPage("NaBeo"); // Assuming loadpage is a method to load pages
-                        // Load the new page
+                        // Load the page with the data
+                        loadPageWithRoot("NaBeo", num);
 
-                        System.out.println(" PUN");
+                        System.out.println("Page loaded successfully");
                     } catch (IOException e) {
                         e.printStackTrace(); // Handle the exception properly
                     }
-
                 }
             }
         });
     }
-    private void loadPage(String page) {
+
+    private void loadPageWithRoot(String page, int num) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pttk_project/" + page + ".fxml"));
             Parent root = loader.load();
+
+            // Obtain the controller
+            xemCVService anotherController = loader.getController();
+
+            // Pass num data to the controller
+            anotherController.receiveSelectedRowData(num);
 
             // Create a new stage
             Stage popupStage = new Stage();

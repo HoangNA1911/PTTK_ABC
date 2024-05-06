@@ -57,17 +57,14 @@ public class xemCVService {
 
     private ObservableList<HoSoUngTuyen> HoSoUngTuyenList = FXCollections.observableArrayList();
     @FXML
-    public void initialize(int num) {
+    public void initialize() {
         System.out.println("88");
         ma_ho_so.setCellValueFactory(cellData -> cellData.getValue().ma_ho_soproperty().asString());
         ten.setCellValueFactory(cellData -> cellData.getValue().getUngVien().tenproperty());
         email.setCellValueFactory(cellData -> cellData.getValue().getUngVien().emailproperty());
         trang_thai.setCellValueFactory(cellData -> cellData.getValue().trang_thaiproperty());
         level.setCellValueFactory(cellData -> cellData.getValue().levelproperty().asString());
-        System.out.println("2");
         HoSoUngTuyenList = FXCollections.observableArrayList();
-        loadHoSoUngTuyenFromDatabase();
-        System.out.println("3");
     }
 
 
@@ -75,10 +72,11 @@ public class xemCVService {
         // Process the received data herenhansuList.clear();
         //        loadNhansuFromDatabase();
         //        nhansuTableView.refresh();
-        System.out.println("Received selected row data: " + selectedRowData);
         HoSoUngTuyenList.clear();
+        System.out.println("Received selected row data: " + selectedRowData);
         loadHoSoUngTuyenFromDatabase2(selectedRowData);
         System.out.println("5");
+
 
     }
 
