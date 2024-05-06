@@ -68,4 +68,8 @@ public class HomepageController implements Initializable {
         BorderPane.setMargin(ap, new Insets(40, 40, 40, 40));
     }
 
+    @FXML
+    private void pageRegisterDoanhNghiep(MouseEvent event) throws IOException {
+        loadpage("register_company");
+    }
 }

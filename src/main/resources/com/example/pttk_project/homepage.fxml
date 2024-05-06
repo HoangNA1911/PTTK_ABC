@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.layout.StackPane?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.HomepageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.HomepageController">
    <children>
-      <BorderPane fx:id="bp" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../java/css/styling.css">
+      <BorderPane fx:id="bp" prefHeight="604.0" prefWidth="972.0" stylesheets="@../../../../java/css/styling.css">
          <left>
             <VBox prefHeight="353.0" prefWidth="139.0" style="-fx-background-color: #85B6EF;" BorderPane.alignment="CENTER">
                <children>
@@ -59,6 +59,11 @@
                         <Insets top="2.0" />
                      </opaqueInsets>
                   </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#pageRegisterDoanhNghiep" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add Bussiness">
+                     <opaqueInsets>
+                        <Insets top="2.0" />
+                     </opaqueInsets>
+                  </Button>
                   <Button mnemonicParsing="false" onMouseClicked="#pageLogin" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Login">
                      <VBox.margin>
                         <Insets />
@@ -68,7 +73,7 @@
             </VBox>
          </left>
          <top>
-            <HBox prefHeight="47.0" prefWidth="600.0" style="-fx-background-color: #6690C1;" BorderPane.alignment="CENTER">
+            <HBox prefHeight="47.0"  prefWidth="972.0" style="-fx-background-color: #6690C1;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="43.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                      <image>

@@ -2,18 +2,25 @@ package com.example.pttk_project.dto;
 
 public class doanhNghiepDto {
    String ten_cty;
-   String ms_thue;
+   int ms_thue;
    String dia_chi;
    String dai_dien;
    String email;
 
-   doanhNghiepDto(String ten_cty, String ms_thue, String dia_chi, String dai_dien,  String email){
+    doanhNghiepDto(){
+
+    }
+
+   public doanhNghiepDto(String ten_cty, int ms_thue, String dia_chi, String dai_dien, String email){
        this.ten_cty = ten_cty;
        this.ms_thue = ms_thue;
        this.dia_chi = dia_chi;
        this.dai_dien = dai_dien;
        this.email = email;
    }
+
+
+
     public String getTen_cty() {
         return ten_cty;
     }
@@ -22,11 +29,11 @@ public class doanhNghiepDto {
         this.ten_cty = ten_cty;
     }
 
-    public String getMs_thue() {
+    public int getMs_thue() {
         return ms_thue;
     }
 
-    public void setMs_thue(String ms_thue) {
+    public void setMs_thue(int ms_thue) {
         this.ms_thue = ms_thue;
     }
 
