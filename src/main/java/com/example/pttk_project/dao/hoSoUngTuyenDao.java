@@ -7,14 +7,14 @@ import com.example.pttk_project.dto.DoanhNghiep;
 import com.example.pttk_project.dto.HinhThucQuangCao;
 import com.example.pttk_project.dto.ThongTinDangTuyen;
 import com.example.pttk_project.dto.ViTriUngTuyen;
+import com.example.pttk_project.dto.UngVien;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-public class thongTinDangTuyenDao {
 
-    // Method to load ThongTinDangTuyen from the database and return a list of ThongTinDangTuyen objects
+public class hoSoUngTuyenDao {
     public List<ThongTinDangTuyen> getAllThongTinDangTuyen() {
         List<ThongTinDangTuyen> ThongTinDangTuyenList = new ArrayList<>();
 

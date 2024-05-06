@@ -4,6 +4,7 @@ module com.example.pttk_project {
 
     requires com.dlsc.formsfx;
     requires java.sql;
+    requires mysql.connector.java;
 
     opens com.example.pttk_project to javafx.fxml;
     exports com.example.pttk_project;
