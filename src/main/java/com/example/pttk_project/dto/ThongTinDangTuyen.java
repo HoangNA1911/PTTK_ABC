@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 //doi ten file
 public class ThongTinDangTuyen  {
+
     private final SimpleIntegerProperty ma_thong_tin = new SimpleIntegerProperty();
     private final SimpleIntegerProperty ma_doanh_nghiep = new SimpleIntegerProperty();
     private final SimpleIntegerProperty ma_vi_tri = new SimpleIntegerProperty();
@@ -20,7 +21,7 @@ public class ThongTinDangTuyen  {
     private final ObjectProperty<DoanhNghiep> DoanhNghiepProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<HinhThucQuangCao> HinhThucQuangCaoProperty = new SimpleObjectProperty<>();
-
+    private final SimpleIntegerProperty hoSoCount = new SimpleIntegerProperty();
 
     public ThongTinDangTuyen (){
 
@@ -166,4 +167,17 @@ public class ThongTinDangTuyen  {
         return HinhThucQuangCaoProperty;
     }
 
+    public SimpleIntegerProperty hoSoCountProperty() {
+        return hoSoCount;
+    }
+
+    // Method to get hoSoCount value
+    public int getHoSoCount() {
+        return hoSoCount.get();
+    }
+
+    // Method to set hoSoCount value
+    public void setHoSoCount(int hoSoCount) {
+        this.hoSoCount.set(hoSoCount);
+    }
 }

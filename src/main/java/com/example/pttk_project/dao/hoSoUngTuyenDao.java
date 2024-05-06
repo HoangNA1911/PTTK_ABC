@@ -3,11 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import com.example.pttk_project.dto.DoanhNghiep;
-import com.example.pttk_project.dto.HinhThucQuangCao;
-import com.example.pttk_project.dto.ThongTinDangTuyen;
-import com.example.pttk_project.dto.ViTriUngTuyen;
-import com.example.pttk_project.dto.UngVien;
+import com.example.pttk_project.dto.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,48 +11,45 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class hoSoUngTuyenDao {
-    public List<ThongTinDangTuyen> getAllThongTinDangTuyen() {
-        List<ThongTinDangTuyen> ThongTinDangTuyenList = new ArrayList<>();
+    private int ho_so_count;
+    // Method to load ThongTinDangTuyen from the database and return a list of ThongTinDangTuyen objects
+    public List<HoSoUngTuyen> getAllHoSoUngTuyen() {
+        List<HoSoUngTuyen> HoSoUngTuyenList= new ArrayList<>();
 
         // Your database querying logic here
-        String SELECT_QUERY = "SELECT tt.ma_thong_tin, ten_cty, vt.ten as tenVT, qc.ten as tenQC, ngay_het_han FROM ThongTinDangTuyen tt " +
-                "join DoanhNghiep dn on tt.ma_doanh_nghiep  = dn.ma_doanh_nghiep " +
-                "join ViTriUngTuyen vt on vt.ma_vi_tri = tt.ma_vi_tri " +
-                "join HinhThucQuangCao qc on qc.ma_hinh_thuc = tt.ma_hinh_thuc " +
-                "join HoSoUngTuyen ut on ut.ma_thong_tin = tt.ma_thong_tin " +
-                "group by ut.ma_thong_tin order by tt.ma_thong_tin asc;  ";
+        String SELECT_QUERY = "SELECT ut.ma_ho_so, uv.ten, uv.email, ut.trang_thai, ut.level " +
+                "FROM HoSoUngTuyen ut " +
+                "JOIN UngVien uv ON ut.ma_ung_vien = uv.ma_ung_vien " +
+                "WHERE ut.ma_thong_tin = 9 " +
+                "ORDER BY ut.ma_ho_so ASC";
+
 
         try (Connection conn = new connectionSQL().getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(SELECT_QUERY)) {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                ThongTinDangTuyen kh = new ThongTinDangTuyen();
-                DoanhNghiep hp = new DoanhNghiep();
-                ViTriUngTuyen vt = new ViTriUngTuyen();
-                HinhThucQuangCao qcc = new HinhThucQuangCao();
+                HoSoUngTuyen kh = new HoSoUngTuyen();
+                UngVien hp = new UngVien();
 
-                String tenDN = rs.getString("ten_cty");
-                hp.setten_cty(tenDN);
-                kh.setDoanhNghiep(hp);
 
-                String vitriTuyen = rs.getString("tenVT");
-                vt.setten(vitriTuyen);
-                kh.setViTriUngTuyen(vt);
+                String tenUV = rs.getString("ten");
+                hp.setten(tenUV);
+                kh.setUngVien(hp);
 
-                String hinhthucqc = rs.getString("tenQC");
-                qcc.setten(hinhthucqc);
-                kh.setHinhThucQuangCao(qcc);
+                String emailUV = rs.getString("email");
+                hp.setemail(emailUV);
+                kh.setUngVien(hp);
 
-                kh.setma_thong_tin(rs.getInt("ma_thong_tin"));
-                kh.setngay_het_han(rs.getDate("ngay_het_han").toLocalDate());
-
-                ThongTinDangTuyenList.add(kh);
+                kh.setma_ho_so(rs.getInt("ma_ho_so"));
+                kh.settrang_thai(rs.getString("trang_thai"));
+                kh.setlevel(rs.getInt("level"));
+                HoSoUngTuyenList.add(kh);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
-        return ThongTinDangTuyenList;
+        return HoSoUngTuyenList;
     }
 }
