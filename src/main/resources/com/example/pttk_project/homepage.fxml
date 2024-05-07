@@ -45,7 +45,7 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageAddPolicy" prefHeight="67.75" prefWidth="139.0" stylesheets="@../../../../java/css/styling.css" text="Chính sách ưu đãi">
+                  <Button mnemonicParsing="false" onMouseClicked="#pagePolicyList" prefHeight="67.75" prefWidth="139.0" stylesheets="@../../../../java/css/styling.css" text="Chính sách ưu đãi">
                      <opaqueInsets>
                         <Insets top="2.0" />
                      </opaqueInsets>
@@ -89,3 +89,4 @@
       </BorderPane>
    </children>
 </AnchorPane>
+
