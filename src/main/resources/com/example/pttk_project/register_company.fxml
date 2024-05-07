@@ -24,13 +24,13 @@
 
     </rowConstraints>
 
-    <VBox spacing="10" style="-fx-padding: 0 0 0 10;" GridPane.rowIndex="0">
+    <VBox spacing="10" style="-fx-padding: 0 0 0 10; -fx-font-weight: bold;" GridPane.rowIndex="0">
       <children>
            <Label style="-fx-font-weight: bold; -fx-font-size: 20px;" text="Đăng ký tài khoản doanh nghiệp" />
       </children>
     </VBox>
 
-    <VBox spacing="10" style="-fx-padding: 0 0 0 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <VBox spacing="10" style="-fx-padding: 0 0 0 30;" GridPane.columnIndex="0" GridPane.rowIndex="1">
 
         <!-- Sử dụng VBox để căn chỉnh hai dòng -->
         <VBox spacing="10" />
@@ -44,11 +44,11 @@
     </VBox>
 
 
-    <VBox spacing="10" style="-fx-padding: 0 0 20 0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <VBox spacing="10"  GridPane.columnIndex="1" GridPane.rowIndex="1">
 
-        <GridPane>
+        <GridPane style="-fx-padding: 0 0 20 0;">
         <HBox spacing="5" GridPane.rowIndex="0">
-            <Label text="Tên doanh nghiệp đăng ký" />
+            <Label style="-fx-font-weight: bold;"  text="Tên doanh nghiệp đăng ký" />
             <Label style="-fx-text-fill: red;" text="*" />
 
         </HBox>
@@ -67,10 +67,10 @@
          </rowConstraints>
         </GridPane>
 
-        <GridPane>
+        <GridPane style="-fx-padding: 0 0 20 0;">
             <!-- Hàng 1 -->
             <HBox spacing="5" GridPane.rowIndex="0">
-                <Label text="Địa chỉ doanh nghiệp" />
+                <Label style="-fx-font-weight: bold;" text="Địa chỉ doanh nghiệp" />
                 <Label style="-fx-text-fill: red;" text="*" />
 
             </HBox>
@@ -90,23 +90,23 @@
 
 
 
-        <HBox spacing="5">
+        <HBox style="-fx-padding: 0 0 20 0;" spacing="5">
             <VBox spacing="5">
-                <Label text="Mã số thuế" />
+                <Label style="-fx-font-weight: bold;" text="Mã số thuế" />
 
                 <TextField fx:id="taxCodeTextField" prefHeight="28.0" prefWidth="235.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;" />
             </VBox>
             <VBox spacing="5">
-                <Label text="Người đại diện" />
+                <Label style="-fx-font-weight: bold;" text="Người đại diện" />
                 <TextField fx:id="representativeTextField" prefHeight="28.0" prefWidth="229.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;" />
             </VBox>
         </HBox>
 
-        <GridPane>
+        <GridPane style="-fx-padding: 0 0 20 0;">
             <!-- Hàng 1 -->
             <HBox spacing="5" GridPane.rowIndex="0">
 
-                <Label text="Email Doanh nghiệp" />
+                <Label style="-fx-font-weight: bold;" text="Email Doanh nghiệp" />
                 <Label style="-fx-text-fill: red;" text="*" />
 
             </HBox>
@@ -123,7 +123,7 @@
             <RowConstraints />
          </rowConstraints>
         </GridPane>
-        <CheckBox style="-fx-padding: 0 0 20 0; -fx-text-fill: white;" text="Tôi đã đọc tất cả các điều khoản và các chính sách của công ty ABC và tỗi đã đồng ý trừ khi tổ chức của tôi có thỏa thuận bằng văn bản riêng với ABC Inc. trong trường hợp đó các điều khoản riêng đó sẽ được áp dụng. " wrapText="true" />
+        <CheckBox  style="-fx-padding: 0 0 20 0; -fx-text-fill: white;" text="Tôi đã đọc tất cả các điều khoản và các chính sách của công ty ABC và tỗi đã đồng ý trừ khi tổ chức của tôi có thỏa thuận bằng văn bản riêng với ABC Inc. trong trường hợp đó các điều khoản riêng đó sẽ được áp dụng. " wrapText="true" />
     </VBox>
     <VBox alignment="CENTER" spacing="10" GridPane.rowIndex="2" />
      <Button fx:id="registerButton" text="Đăng ký" GridPane.columnIndex="1" GridPane.rowIndex="2" />
