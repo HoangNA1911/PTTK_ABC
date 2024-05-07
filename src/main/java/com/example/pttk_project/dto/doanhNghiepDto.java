@@ -1,13 +1,14 @@
 package com.example.pttk_project.dto;
 
 public class doanhNghiepDto {
+    int ma_dn;
    String ten_cty;
    int ms_thue;
    String dia_chi;
    String dai_dien;
    String email;
 
-    doanhNghiepDto(){
+    public doanhNghiepDto(){
 
     }
 
@@ -19,7 +20,18 @@ public class doanhNghiepDto {
        this.email = email;
    }
 
+    public doanhNghiepDto(int maDN, String ten) {
+        this.ma_dn = maDN;
+        this.ten_cty = ten;
+    }
 
+    public int getMa_dn() {
+        return ma_dn;
+    }
+
+    public void setMa_dn(int ma_dn) {
+        this.ma_dn = ma_dn;
+    }
 
     public String getTen_cty() {
         return ten_cty;

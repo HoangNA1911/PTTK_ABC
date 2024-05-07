@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public class ungVienDao {
     private static final String SELECT_QUERY = "SELECT * FROM UngVien WHERE email = ? AND password = ?";
+    private static final String DANGKY_UV_QUERY = "SELECT * FROM UngVien WHERE email = ? AND password = ?";
 
 
     public boolean login(String email, String password) {
