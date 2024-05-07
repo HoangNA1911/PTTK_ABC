@@ -3,23 +3,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.example.pttk_project.dto.doanhNghiepDto;
 import com.example.pttk_project.dto.HinhThucQuangCao;
 import com.example.pttk_project.dto.ThongTinDangTuyen;
 import com.example.pttk_project.dto.ViTriUngTuyen;
-import com.example.pttk_project.dto.doanhNghiepDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 public class thongTinDangTuyenDao {
-
+    private int ho_so_count;
     // Method to load ThongTinDangTuyen from the database and return a list of ThongTinDangTuyen objects
     public List<ThongTinDangTuyen> getAllThongTinDangTuyen() {
         List<ThongTinDangTuyen> ThongTinDangTuyenList = new ArrayList<>();
 
         // Your database querying logic here
-        String SELECT_QUERY = "SELECT tt.ma_thong_tin, ten_cty, vt.ten as tenVT, qc.ten as tenQC, ngay_het_han FROM ThongTinDangTuyen tt " +
+        String SELECT_QUERY = "SELECT tt.ma_thong_tin, ten_cty, vt.ten as tenVT, qc.ten as tenQC, ngay_het_han, count(ut.ma_ho_so)" +
+                "FROM ThongTinDangTuyen tt " +
                 "join DoanhNghiep dn on tt.ma_doanh_nghiep  = dn.ma_doanh_nghiep " +
                 "join ViTriUngTuyen vt on vt.ma_vi_tri = tt.ma_vi_tri " +
                 "join HinhThucQuangCao qc on qc.ma_hinh_thuc = tt.ma_hinh_thuc " +
@@ -50,7 +51,7 @@ public class thongTinDangTuyenDao {
 
                 kh.setma_thong_tin(rs.getInt("ma_thong_tin"));
                 kh.setngay_het_han(rs.getDate("ngay_het_han").toLocalDate());
-
+                kh.setHoSoCount(rs.getInt("count(ut.ma_ho_so)"));
                 ThongTinDangTuyenList.add(kh);
             }
         } catch (SQLException e) {
