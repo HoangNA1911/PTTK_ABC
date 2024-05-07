@@ -1,6 +1,6 @@
 package com.example.pttk_project.dao;
 
-import com.example.pttk_project.dto.ChinhSach;
+import com.example.pttk_project.dto.ChinhSachDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +11,8 @@ import java.util.List;
 
 public class ChinhSachDao {
     // Method to load ThongTinDangTuyen from the database and return a list of ThongTinDangTuyen objects
-    public List<ChinhSach> getAllChinhSach() {
-        List<ChinhSach> ThongTinDangTuyenList = new ArrayList<>();
+    public List<ChinhSachDto> getAllChinhSach() {
+        List<ChinhSachDto> ThongTinDangTuyenList = new ArrayList<>();
 
         // Your database querying logic here
         String SELECT_QUERY = "SELECT ma_chinh_sach, mo_ta FROM ChinhSach";
@@ -22,7 +22,7 @@ public class ChinhSachDao {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                ChinhSach kh = new ChinhSach();
+                ChinhSachDto kh = new ChinhSachDto();
 
                 kh.setma_chinh_sach(rs.getInt("ma_chinh_sach"));
                 kh.setmo_ta(rs.getString("mo_ta"));

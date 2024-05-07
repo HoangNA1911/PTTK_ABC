@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--recrut-->
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -23,7 +24,7 @@
             <TableColumn fx:id="ma_vi_tri" prefWidth="163.0" text="Vị trí ứng tuyển" />
             <TableColumn fx:id="ma_hinh_thuc" prefWidth="208.0" text="Hình thức quảng cáo" />
             <TableColumn fx:id="ngay_het_han" prefWidth="126.0" text="Ngày hết hạn" />
-            <TableColumn prefWidth="69.0" text="Số hồ sơ" />
+            <TableColumn fx:id="SoHoSo" prefWidth="69.0" text="Số hồ sơ" />
          </columns>
       </TableView>
    </children>

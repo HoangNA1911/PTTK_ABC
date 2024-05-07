@@ -37,7 +37,7 @@ public class thongTinDangTuyenDao {
                 HinhThucQuangCao qcc = new HinhThucQuangCao();
 
                 String tenDN = rs.getString("ten_cty");
-                hp.setTen_cty(tenDN);
+                hp.setten_cty(tenDN);
                 kh.setDoanhNghiep(hp);
 
                 String vitriTuyen = rs.getString("tenVT");

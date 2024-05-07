@@ -19,11 +19,11 @@ public class doanhNghiepDao {
              PreparedStatement preparedStatement = conn.prepareStatement(DANGKY_THONGTIN_DN_QUERY)) {
 
             // Thiết lập các tham số cho câu truy vấn
-            preparedStatement.setString(1, newDN.getTen_cty());
-            preparedStatement.setInt(2, newDN.getMs_thue());
-            preparedStatement.setString(3, newDN.getDia_chi());
+            preparedStatement.setString(1, newDN.getten_cty());
+            preparedStatement.setString(2, newDN.getms_thue());
+            preparedStatement.setString(3, newDN.getdia_chi());
             preparedStatement.setString(4, newDN.getDai_dien());
-            preparedStatement.setString(5, newDN.getEmail());
+            preparedStatement.setString(5, newDN.getemail());
 
 
 
