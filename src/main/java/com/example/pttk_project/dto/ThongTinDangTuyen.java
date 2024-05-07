@@ -18,6 +18,8 @@ public class ThongTinDangTuyen  {
     private final SimpleIntegerProperty ma_hinh_thuc = new SimpleIntegerProperty();
     private final SimpleObjectProperty<LocalDate> ngay_het_han = new  SimpleObjectProperty<>();
     private final SimpleIntegerProperty tiem_nang = new SimpleIntegerProperty();
+    private final SimpleStringProperty tinh_trang = new SimpleStringProperty();
+
     private final ObjectProperty<doanhNghiepDto> DoanhNghiepProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty = new SimpleObjectProperty<>();
     private final ObjectProperty<HinhThucQuangCao> HinhThucQuangCaoProperty = new SimpleObjectProperty<>();
@@ -27,7 +29,7 @@ public class ThongTinDangTuyen  {
 
     }
 
-    public ThongTinDangTuyen (int ma_thong_tin, int ma_doanh_nghiep, int ma_vi_tri, int so_luong, LocalDate ngay_bat_dau, String yeu_cau, int ma_hinh_thuc, LocalDate ngay_het_han, int tiem_nang){
+    public ThongTinDangTuyen (int ma_thong_tin, int ma_doanh_nghiep, int ma_vi_tri, int so_luong, LocalDate ngay_bat_dau, String yeu_cau, int ma_hinh_thuc, LocalDate ngay_het_han, int tiem_nang, String tinh_trang){
         this.ma_thong_tin.set(ma_thong_tin);
         this.ma_vi_tri.set(ma_vi_tri);
         this.so_luong.set(so_luong);
@@ -36,6 +38,7 @@ public class ThongTinDangTuyen  {
         this.ma_hinh_thuc.set(ma_hinh_thuc);
         this.ngay_het_han.set(ngay_het_han);
         this.tiem_nang.set(tiem_nang);
+        this.tinh_trang.set(yeu_cau);
     }
 
     public int getma_thong_tin(){
@@ -179,5 +182,16 @@ public class ThongTinDangTuyen  {
     // Method to set hoSoCount value
     public void setHoSoCount(int hoSoCount) {
         this.hoSoCount.set(hoSoCount);
+    }
+
+
+    public String gettinh_trang(){
+        return tinh_trang.get();
+    }
+    public void settinh_trang(String tinh_trang){
+        this.tinh_trang.set(tinh_trang);
+    }
+    public SimpleStringProperty tinh_trangproperty(){
+        return tinh_trang;
     }
 }

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<?import javafx.scene.layout.StackPane?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.HomepageController">
 
    <children>
@@ -92,13 +99,28 @@
 
 
                <!-- Phần nhỏ đè lên (foreground) -->
-               <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" >
-                  <children>
-                     <Label layoutX="216.0" layoutY="168.0" text="advertise" wrapText="true" />
-                  </children>
+               <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0">
                   <padding>
-                     <Insets top="40" right="40" bottom="40" left="40"/>
+                     <Insets bottom="40" left="40" right="40" top="40" />
                   </padding>
+               <children>
+                  <Label layoutX="222.0" layoutY="14.0" text="DANH SÁCH THÔNG TIN ĐĂNG TUYỂN">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="ThongTinDangTuyenTableView" layoutX="12.0" layoutY="66.0" prefHeight="465.0" prefWidth="810.0">
+                    <columns>
+                      <TableColumn fx:id="ma_thong_tin" prefWidth="36.0" text="Số" />
+                      <TableColumn fx:id="ma_doanh_nghiep" prefWidth="150.0" text="Doanh nghiệp" />
+                        <TableColumn fx:id="ma_vi_tri" prefWidth="129.0" text="Vị trí ứng tuyển" />
+                        <TableColumn fx:id="luong" prefWidth="43.0" text="Lương" />
+                        <TableColumn fx:id="ngay_het_han" prefWidth="99.0" text="Ngày hết hạn" />
+                        <TableColumn fx:id="yeu_cau" prefWidth="305.0" text="Yêu cầu" />
+                        <TableColumn fx:id="SoHoSo" prefWidth="47.0" text="Đã đki" />
+                    </columns>
+                  </TableView>
+               </children>
                </AnchorPane>
 
 

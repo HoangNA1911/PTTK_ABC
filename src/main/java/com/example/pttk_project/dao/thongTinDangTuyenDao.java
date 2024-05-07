@@ -19,7 +19,8 @@ public class thongTinDangTuyenDao {
         List<ThongTinDangTuyen> ThongTinDangTuyenList = new ArrayList<>();
 
         // Your database querying logic here
-        String SELECT_QUERY = "SELECT tt.ma_thong_tin, ten_cty, vt.ten as tenVT, qc.ten as tenQC, ngay_het_han, count(ut.ma_ho_so)" +
+        String SELECT_QUERY =
+                "SELECT tt.ma_thong_tin, ten_cty, vt.ten as tenVT, qc.ten as tenQC, ngay_het_han, count(ut.ma_ho_so)" +
                 "FROM ThongTinDangTuyen tt " +
                 "join DoanhNghiep dn on tt.ma_doanh_nghiep  = dn.ma_doanh_nghiep " +
                 "join ViTriUngTuyen vt on vt.ma_vi_tri = tt.ma_vi_tri " +
@@ -49,6 +50,52 @@ public class thongTinDangTuyenDao {
                 qcc.setten(hinhthucqc);
                 kh.setHinhThucQuangCao(qcc);
 
+                kh.setma_thong_tin(rs.getInt("ma_thong_tin"));
+                kh.setngay_het_han(rs.getDate("ngay_het_han").toLocalDate());
+                kh.setHoSoCount(rs.getInt("count(ut.ma_ho_so)"));
+                ThongTinDangTuyenList.add(kh);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ThongTinDangTuyenList;
+    }
+
+
+    public List<ThongTinDangTuyen> getAllThongTinDangTuyenUngVien() {
+        List<ThongTinDangTuyen> ThongTinDangTuyenList = new ArrayList<>();
+
+        // Your database querying logic here
+        String SELECT_QUERY =
+                "SELECT tt.ma_thong_tin, ten_cty, vt.ten as tenVT, so_luong, ngay_het_han, yeu_cau,count(ut.ma_ho_so)" +
+                        "FROM ThongTinDangTuyen tt " +
+                        "join DoanhNghiep dn on tt.ma_doanh_nghiep  = dn.ma_doanh_nghiep " +
+                        "join ViTriUngTuyen vt on vt.ma_vi_tri = tt.ma_vi_tri " +
+                        "join HoSoUngTuyen ut on ut.ma_thong_tin = tt.ma_thong_tin " +
+                        "where tinh_trang = 'Đã duyệt xong'" +
+                        "group by ut.ma_thong_tin order by tt.ma_thong_tin asc;  ";
+
+        try (Connection conn = new connectionSQL().getConnection();
+             PreparedStatement preparedStatement = conn.prepareStatement(SELECT_QUERY)) {
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                ThongTinDangTuyen kh = new ThongTinDangTuyen();
+                doanhNghiepDto hp = new doanhNghiepDto();
+                ViTriUngTuyen vt = new ViTriUngTuyen();
+                HinhThucQuangCao qcc = new HinhThucQuangCao();
+
+                String tenDN = rs.getString("ten_cty");
+                hp.setten_cty(tenDN);
+                kh.setDoanhNghiep(hp);
+
+                String vitriTuyen = rs.getString("tenVT");
+                vt.setten(vitriTuyen);
+                kh.setViTriUngTuyen(vt);
+
+                kh.setyeu_cau(rs.getString("yeu_cau"));
+                kh.setso_luong(rs.getInt("so_luong"));
                 kh.setma_thong_tin(rs.getInt("ma_thong_tin"));
                 kh.setngay_het_han(rs.getDate("ngay_het_han").toLocalDate());
                 kh.setHoSoCount(rs.getInt("count(ut.ma_ho_so)"));
