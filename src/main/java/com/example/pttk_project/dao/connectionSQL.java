@@ -17,7 +17,7 @@ public class connectionSQL {
     //Aimeefmst281
     private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/HTQL_HoSo_UT?allowPublicKeyRetrieval=true&useSSL=false";
     private static final String DATABASE_USERNAME = "root";
-    private static final String DATABASE_PASSWORD = "12345678";
+    private static final String DATABASE_PASSWORD = "Aimeefmst281.";
 
 
 
