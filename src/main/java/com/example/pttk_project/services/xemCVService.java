@@ -17,13 +17,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,9 +47,17 @@ public class xemCVService {
     @FXML
     private TableColumn<HoSoUngTuyen, String> email;
     @FXML
+    private TableColumn<HoSoUngTuyen, String> dia_chi;
+    @FXML
+    private TableColumn<HoSoUngTuyen, String> ngay_sinh;
+    @FXML
     private TableColumn<HoSoUngTuyen, String> trang_thai;
     @FXML
     private TableColumn<HoSoUngTuyen, String> level;
+    @FXML
+    private Label company;
+    @FXML
+    private Label place;
 
     private ObservableList<HoSoUngTuyen> HoSoUngTuyenList = FXCollections.observableArrayList();
     @FXML
@@ -64,11 +68,14 @@ public class xemCVService {
         email.setCellValueFactory(cellData -> cellData.getValue().getUngVien().emailproperty());
         trang_thai.setCellValueFactory(cellData -> cellData.getValue().trang_thaiproperty());
         level.setCellValueFactory(cellData -> cellData.getValue().levelproperty().asString());
+        dia_chi.setCellValueFactory(cellData -> cellData.getValue().getUngVien().dia_chiproperty());
+        ngay_sinh.setCellValueFactory(cellData -> cellData.getValue().getUngVien().ngay_sinhproperty().asString());
         HoSoUngTuyenList = FXCollections.observableArrayList();
+
     }
 
 
-    public void receiveSelectedRowData(int selectedRowData) {
+    public void receiveSelectedRowData(int selectedRowData, String ten, String vitri) {
         // Process the received data herenhansuList.clear();
         //        loadNhansuFromDatabase();
         //        nhansuTableView.refresh();
@@ -76,7 +83,8 @@ public class xemCVService {
         System.out.println("Received selected row data: " + selectedRowData);
         loadHoSoUngTuyenFromDatabase2(selectedRowData);
         //System.out.println("5");
-
+        company.setText(ten);
+        place.setText(vitri);
 
     }
 

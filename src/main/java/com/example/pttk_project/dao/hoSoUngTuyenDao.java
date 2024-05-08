@@ -1,4 +1,5 @@
 package com.example.pttk_project.dao;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class hoSoUngTuyenDao {
         List<HoSoUngTuyen> HoSoUngTuyenList= new ArrayList<>();
 
         // Your database querying logic here
-        String SELECT_QUERY = "SELECT ut.ma_ho_so, uv.ten, uv.email, ut.trang_thai, ut.level " +
+        String SELECT_QUERY = "SELECT ut.ma_ho_so, uv.ten, uv.email, ut.trang_thai, ut.level,uv.ngay_sinh,uv.dia_chi " +
                 "FROM HoSoUngTuyen ut " +
                 "JOIN UngVien uv ON ut.ma_ung_vien = uv.ma_ung_vien " +
                 "WHERE ut.ma_thong_tin = " + num + " " +
@@ -79,6 +80,14 @@ public class hoSoUngTuyenDao {
 
                 String emailUV = rs.getString("email");
                 hp.setemail(emailUV);
+                kh.setUngVien(hp);
+
+                String diachiUV = rs.getString("dia_chi");
+                hp.setdia_chi(diachiUV);
+                kh.setUngVien(hp);
+
+                LocalDate birthUV = rs.getDate("ngay_sinh").toLocalDate(); // Convert to LocalDate
+                hp.setngay_sinh(birthUV); // Set LocalDate
                 kh.setUngVien(hp);
 
                 kh.setma_ho_so(rs.getInt("ma_ho_so"));

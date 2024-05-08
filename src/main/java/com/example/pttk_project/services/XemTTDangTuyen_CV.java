@@ -76,9 +76,10 @@ public class XemTTDangTuyen_CV {
 
                         // Assuming ma_thong_tin is an appropriate field in selectedThongTin
                         int num = selectedThongTin.getma_thong_tin();
-
+                        String tenCongty = selectedThongTin.getDoanhNghiep().getten_cty();
+                        String place = selectedThongTin.getViTriUngTuyen().getten();
                         // Load the page with the data
-                        loadPageWithRoot("NaBeo", num);
+                        loadPageWithRoot("NaBeo", num,tenCongty, place);
 
                         System.out.println("Page loaded successfully");
                     } catch (IOException e) {
@@ -89,7 +90,7 @@ public class XemTTDangTuyen_CV {
         });
     }
 
-    private void loadPageWithRoot(String page, int num) {
+    private void loadPageWithRoot(String page, int num, String tenCongty, String place) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pttk_project/" + page + ".fxml"));
             Parent root = loader.load();
@@ -98,7 +99,7 @@ public class XemTTDangTuyen_CV {
             xemCVService anotherController = loader.getController();
 
             // Pass num data to the controller
-            anotherController.receiveSelectedRowData(num);
+            anotherController.receiveSelectedRowData(num, tenCongty, place);
 
             // Create a new stage
             Stage popupStage = new Stage();
