@@ -41,6 +41,32 @@ public class doanhNghiepDao {
 
         return isValid;
     }
+    private static final String CHECK_EXIST_QUERY = "Select * from doanhnghiep where ten_cty = ? or email = ?";
+    public boolean checkExist(doanhNghiepDto newDN){
+        boolean isValid = false;
+
+        // Khởi tạo kết nối
+        try (Connection conn = new connectionSQL().getConnection();
+             PreparedStatement preparedStatement = conn.prepareStatement(CHECK_EXIST_QUERY)) {
+
+            // Thiết lập các tham số cho câu truy vấn
+            preparedStatement.setString(1, newDN.getten_cty());
+            preparedStatement.setString(2, newDN.getemail());
+
+            // Thực hiện câu truy vấn
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Nếu có bản ghi trả về, tức là thông tin đăng nhập hợp lệ
+            if (resultSet.next()) {
+                isValid = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Xử lý ngoại lệ SQLException nếu cần
+        }
+
+        return isValid;
+    }
     }
 
 

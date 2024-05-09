@@ -42,23 +42,30 @@ public class RegisterDoanhNghiepService {
                 showAlert("Vui lòng điền đầy đủ thông tin.");
             } else {
                 doanhNghiepDto newDoanhNghiep = new doanhNghiepDto(
-                         // Assuming ma_doanh_nghiep is auto-generated or set later
+                        // Assuming ma_doanh_nghiep is auto-generated or set later
                         businessNameTextField.getText(),
                         taxCodeTextField.getText(), // Convert the tax code to string
                         businessAddressTextField.getText(),
                         representativeTextField.getText(),
                         emailDNTextField.getText()
                 );
+                boolean isDNexist = false;
                 doanhNghiepDao addDN = new doanhNghiepDao();
-                registerSuccess = addDN.addDoanhNghiep(newDoanhNghiep);
+                doanhNghiepDao DNexist = new doanhNghiepDao();
+                isDNexist = DNexist.checkExist(newDoanhNghiep);
+                if (!isDNexist) {
+                    registerSuccess = addDN.addDoanhNghiep(newDoanhNghiep);
 
-                if (registerSuccess)
+                    if (registerSuccess)
 
-                    showAlert("Created " + businessNameTextField.getText());
+                        showAlert("Created " + businessNameTextField.getText());
 
-                else showAlert( "Can not create " + businessNameTextField.getText());
+                    else showAlert("Can not create " + businessNameTextField.getText());
 
+                }
+                else showAlert("Doanh nghiệp đã tồn tại !!!");
             }
+
         });
 
         cancelButton.setOnAction(event -> {
