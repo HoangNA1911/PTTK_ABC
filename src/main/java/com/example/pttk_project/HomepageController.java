@@ -72,4 +72,8 @@ public class HomepageController implements Initializable {
     private void pageRegisterDoanhNghiep(MouseEvent event) throws IOException {
         loadpage("register_company");
     }
+    @FXML
+    private void pageRegisterUngVien(MouseEvent event) throws IOException {
+        loadpage("addUngVien");
+    }
 }

@@ -69,6 +69,11 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#pageRegisterUngVien" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Đăng ký ứng viên">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </left>
