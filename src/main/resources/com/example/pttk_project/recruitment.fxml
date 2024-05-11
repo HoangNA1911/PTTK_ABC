@@ -11,14 +11,14 @@
 
 <AnchorPane prefHeight="542.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.services.XemTTDangTuyen_CV">
    <children>
-      <TextField layoutX="110.0" layoutY="45.0" prefHeight="25.0" prefWidth="240.0" promptText="Tìm kiếm theo tên doanh nghiệp, vị trí " />
-      <Label layoutX="221.0" layoutY="14.0" text="DANH SÁCH THÔNG TIN ĐĂNG TUYỂN">
+      <TextField fx:id="searchTT" layoutX="113.0" layoutY="66.0" prefHeight="25.0" prefWidth="240.0" promptText="Tìm kiếm theo tên doanh nghiệp, vị trí " />
+      <Label layoutX="220.0" layoutY="18.0" text="DANH SÁCH THÔNG TIN ĐĂNG TUYỂN">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="52.0" layoutY="49.0" text="Tìm kiếm" />
-      <TableView fx:id="ThongTinDangTuyenTableView" layoutX="24.0" layoutY="77.0" prefHeight="442.0" prefWidth="786.0">
+      <Label layoutX="57.0" layoutY="70.0" text="Tìm kiếm" />
+      <TableView fx:id="ThongTinDangTuyenTableView" layoutX="24.0" layoutY="115.0" prefHeight="404.0" prefWidth="786.0">
          <columns>
             <TableColumn fx:id="ma_thong_tin" prefWidth="40.0" text="STT" />
             <TableColumn fx:id="ma_doanh_nghiep" prefWidth="179.0" text="Tên doanh nghiệp" />

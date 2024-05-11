@@ -19,9 +19,9 @@
             <TableColumn fx:id="level" prefWidth="42.0" text="Level" />
          </columns>
       </TableView>
-      <Label layoutX="211.0" layoutY="14.0" text="Danh sách hồ sơ ứng tuyển">
+      <Label layoutX="253.0" layoutY="14.0" text="DANH SÁCH HỒ SƠ ÚNG TUYỂN">
          <font>
-            <Font name="System Bold" size="32.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
       <Label layoutX="103.0" layoutY="108.0" text="Vị trí:">

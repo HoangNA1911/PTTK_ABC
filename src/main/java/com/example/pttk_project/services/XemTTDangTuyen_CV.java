@@ -52,6 +52,8 @@ public class XemTTDangTuyen_CV {
     @FXML
     private TableColumn<ThongTinDangTuyen, String> ngay_het_han ;
     @FXML
+    private TextField searchTT;
+    @FXML
     private TableColumn<ThongTinDangTuyen, String> SoHoSo;
     private ObservableList<ThongTinDangTuyen> ThongTinDangTuyenList = FXCollections.observableArrayList();
     @FXML
