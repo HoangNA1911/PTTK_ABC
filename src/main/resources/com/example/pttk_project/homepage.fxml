@@ -17,7 +17,7 @@
          <left>
             <VBox prefHeight="353.0" prefWidth="139.0" style="-fx-background-color: #D1D1D1;" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="login" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Login">
+                  <Button id="login" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Đăng nhập">
 <!--            <VBox prefHeight="542.0" prefWidth="139.0" style="-fx-background-color: #85B6EF;" BorderPane.alignment="CENTER">-->
 
                      <VBox.margin>
@@ -40,7 +40,7 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button id="addRecruite" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add  Recruite">
+                  <Button id="addRecruite" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Thêm đăng tuyển">
 
                      <VBox.margin>
                         <Insets />
@@ -52,7 +52,7 @@
                         <Insets top="2.0" />
                      </opaqueInsets>
                   </Button>
-                  <Button id="register_company" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add Bussiness">
+                  <Button id="register_company" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Thêm doanh nghiệp">
                      <opaqueInsets>
                         <Insets top="2.0" />
                      </opaqueInsets>
