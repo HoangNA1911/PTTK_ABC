@@ -2,6 +2,7 @@ package com.example.pttk_project.services;
 
 import java.sql.SQLException;
 
+import com.example.pttk_project.UserSingleton;
 import com.example.pttk_project.dao.connectionSQL;
 import com.example.pttk_project.dao.nhanVienDao;
 import com.example.pttk_project.dao.ungVienDao;
@@ -72,9 +73,14 @@ public class LoginService {
            loginSuccess = loginNV.login(loginUser);
        }
 
-        if (loginSuccess)
+        if (loginSuccess){
+            UserSingleton.getInstance().setUsername(emailId);
+            UserSingleton.getInstance().setPassword(password);
+            UserSingleton.getInstance().setUngVien(isApplicant);
             showAlert(Alert.AlertType.CONFIRMATION, owner, "Login Successful!",
-                "Welcome " + emailIdField.getText());
+                    "Welcome " + emailIdField.getText());
+        }
+
         else showAlert(Alert.AlertType.CONFIRMATION, owner, "Login Unsuccessful",
                 "Email or password is invalid");
     }

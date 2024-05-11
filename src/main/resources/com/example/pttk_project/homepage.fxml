@@ -17,36 +17,46 @@
          <left>
             <VBox prefHeight="353.0" prefWidth="139.0" style="-fx-background-color: #85B6EF;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageAdvertise" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Advertisement">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="login" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Login">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="addUngVien" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Đăng ký ứng viên">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#handleButtonAction" id="pageAdvertise" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Advertisement">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin></Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageCV" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="CV">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="cv" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="CV">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageProfile" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Profile">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="profile" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Profile">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageRecruitment" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Recruitment">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="recruitment" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Recruitment">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageAddRecruite" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add  Recruite">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="addRecruite" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add  Recruite">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageAddAdvertisement" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add Advertisement">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="addAdvertisement" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add Advertisement">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageContractExpires" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Contract expires">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="contractExpires" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Contract expires">
                      <opaqueInsets>
                         <Insets top="2.0" />
                      </opaqueInsets>
@@ -54,26 +64,18 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageAddPolicy" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add preferential policy">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="addPolicy" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add preferential policy">
                      <opaqueInsets>
                         <Insets top="2.0" />
                      </opaqueInsets>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageRegisterDoanhNghiep" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add Bussiness">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="register_company" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add Bussiness">
                      <opaqueInsets>
                         <Insets top="2.0" />
                      </opaqueInsets>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageLogin" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Login">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageRegisterUngVien" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Đăng ký ứng viên">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Button>
+
+
                </children>
             </VBox>
          </left>
