@@ -10,7 +10,6 @@ import java.sql.SQLException;
 public class connectionSQL {
 
 
-    // Replace below database url, username and password with your actual database credentials
 
 
     private static final String DATABASE_URL = "jdbc:mysql://localhost:13306/PTTK?allowPublicKeyRetrieval=true&useSSL=false";

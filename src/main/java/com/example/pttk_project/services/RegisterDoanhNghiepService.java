@@ -42,12 +42,13 @@ public class RegisterDoanhNghiepService {
                 showAlert("Vui lòng điền đầy đủ thông tin.");
             } else {
                 doanhNghiepDto newDoanhNghiep = new doanhNghiepDto(
+                         // Assuming ma_doanh_nghiep is auto-generated or set later
                         businessNameTextField.getText(),
-                        Integer.parseInt( taxCodeTextField.getText()),
-                       businessAddressTextField.getText(),
+                        taxCodeTextField.getText(), // Convert the tax code to string
+                        businessAddressTextField.getText(),
                         representativeTextField.getText(),
                         emailDNTextField.getText()
-                        );
+                );
                 doanhNghiepDao addDN = new doanhNghiepDao();
                 registerSuccess = addDN.addDoanhNghiep(newDoanhNghiep);
 

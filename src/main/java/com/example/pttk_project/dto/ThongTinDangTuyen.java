@@ -1,15 +1,13 @@
 package com.example.pttk_project.dto;
-
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.ObjectProperty;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 
 //doi ten file
-public class ThongTinDangTuyenDto  {
+public class ThongTinDangTuyen  {
 
     private final SimpleIntegerProperty ma_thong_tin = new SimpleIntegerProperty();
     private final SimpleIntegerProperty ma_doanh_nghiep = new SimpleIntegerProperty();
@@ -21,20 +19,17 @@ public class ThongTinDangTuyenDto  {
     private final SimpleObjectProperty<LocalDate> ngay_het_han = new  SimpleObjectProperty<>();
     private final SimpleIntegerProperty tiem_nang = new SimpleIntegerProperty();
     private final SimpleStringProperty tinh_trang = new SimpleStringProperty();
-    private final SimpleIntegerProperty hoSoCount = new SimpleIntegerProperty();
-
-
 
     private final ObjectProperty<doanhNghiepDto> DoanhNghiepProperty = new SimpleObjectProperty<>();
-    private final ObjectProperty<ViTriUngTuyenDto> ViTriUngTuyenProperty = new SimpleObjectProperty<>();
-    private final ObjectProperty<HinhThucQuangCaoDto> HinhThucQuangCaoProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty = new SimpleObjectProperty<>();
+    private final ObjectProperty<HinhThucQuangCao> HinhThucQuangCaoProperty = new SimpleObjectProperty<>();
+    private final SimpleIntegerProperty hoSoCount = new SimpleIntegerProperty();
 
-
-    public ThongTinDangTuyenDto (){
+    public ThongTinDangTuyen (){
 
     }
 
-    public ThongTinDangTuyenDto (int ma_thong_tin, int ma_doanh_nghiep, int ma_vi_tri, int so_luong, LocalDate ngay_bat_dau, String yeu_cau, int ma_hinh_thuc, LocalDate ngay_het_han, int tiem_nang, String tinh_trang){
+    public ThongTinDangTuyen (int ma_thong_tin, int ma_doanh_nghiep, int ma_vi_tri, int so_luong, LocalDate ngay_bat_dau, String yeu_cau, int ma_hinh_thuc, LocalDate ngay_het_han, int tiem_nang, String tinh_trang){
         this.ma_thong_tin.set(ma_thong_tin);
         this.ma_vi_tri.set(ma_vi_tri);
         this.so_luong.set(so_luong);
@@ -43,17 +38,7 @@ public class ThongTinDangTuyenDto  {
         this.ma_hinh_thuc.set(ma_hinh_thuc);
         this.ngay_het_han.set(ngay_het_han);
         this.tiem_nang.set(tiem_nang);
-        this.tinh_trang.set(tinh_trang);
-    }
-
-    public ThongTinDangTuyenDto(int selectedMaDN, int selectedMaViTri, int soLuong, LocalDate startDate, int selectedHinhThuc, String requirement, LocalDate endDate) {
-        this.ma_doanh_nghiep.set(selectedMaDN);
-        this.ma_vi_tri.set(selectedMaViTri);
-        this.so_luong.set(soLuong);
-        this.ngay_bat_dau.set(startDate);
-        this.ma_hinh_thuc.set(selectedHinhThuc);
-        this.yeu_cau.set(requirement);
-        this.ngay_het_han.set(endDate);
+        this.tinh_trang.set(yeu_cau);
     }
 
     public int getma_thong_tin(){
@@ -86,16 +71,6 @@ public class ThongTinDangTuyenDto  {
         return ma_vi_tri;
     }
 
-    public String getTinh_trang(){
-        return tinh_trang.get();
-    }
-    public void setTinh_Trang(String tinh_trang){
-        this.tinh_trang.set(tinh_trang);
-    }
-    public SimpleStringProperty tinh_trang_triproperty(){
-        return tinh_trang;
-    }
-
     public int getso_luong(){
         return so_luong.get();
     }
@@ -107,9 +82,6 @@ public class ThongTinDangTuyenDto  {
     }
 
     public LocalDate getngay_bat_dau(){
-
-
-
         return ngay_bat_dau.get();
     }
     public void setngay_bat_dau(LocalDate ngay_bat_dau){
@@ -174,24 +146,28 @@ public class ThongTinDangTuyenDto  {
         return DoanhNghiepProperty;
     }
 
-    public ViTriUngTuyenDto getViTriUngTuyen() {
+    public ViTriUngTuyen getViTriUngTuyen() {
         return ViTriUngTuyenProperty.get();
     }
 
-    public void setViTriUngTuyenDto(ViTriUngTuyenDto ViTriUngTuyen) {
+    public void setViTriUngTuyen(ViTriUngTuyen ViTriUngTuyen) {
         this.ViTriUngTuyenProperty.set(ViTriUngTuyen);
     }
 
-    public ObjectProperty<ViTriUngTuyenDto> ViTriUngTuyenProperty() {
+    public ObjectProperty<ViTriUngTuyen> ViTriUngTuyenProperty() {
         return ViTriUngTuyenProperty;
     }
 
-    public HinhThucQuangCaoDto getHinhThucQuangCao() {
+    public HinhThucQuangCao getHinhThucQuangCao() {
         return HinhThucQuangCaoProperty.get();
     }
 
-    public void setHinhThucQuangCao(HinhThucQuangCaoDto HinhThucQuangCao) {
+    public void setHinhThucQuangCao(HinhThucQuangCao HinhThucQuangCao) {
         this.HinhThucQuangCaoProperty.set(HinhThucQuangCao);
+    }
+
+    public ObjectProperty<HinhThucQuangCao> HinhThucQuangCaoProperty() {
+        return HinhThucQuangCaoProperty;
     }
 
     public SimpleIntegerProperty hoSoCountProperty() {
@@ -208,8 +184,14 @@ public class ThongTinDangTuyenDto  {
         this.hoSoCount.set(hoSoCount);
     }
 
-    public ObjectProperty<HinhThucQuangCaoDto> HinhThucQuangCaoProperty() {
-        return HinhThucQuangCaoProperty;
-    }
 
+    public String gettinh_trang(){
+        return tinh_trang.get();
+    }
+    public void settinh_trang(String tinh_trang){
+        this.tinh_trang.set(tinh_trang);
+    }
+    public SimpleStringProperty tinh_trangproperty(){
+        return tinh_trang;
+    }
 }

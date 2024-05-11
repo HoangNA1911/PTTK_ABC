@@ -3,50 +3,60 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<?import javafx.scene.layout.StackPane?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.HomepageController">
+
    <children>
       <BorderPane fx:id="bp" prefHeight="604.0" prefWidth="972.0" stylesheets="@../../../../java/css/styling.css">
          <left>
             <VBox prefHeight="353.0" prefWidth="139.0" style="-fx-background-color: #D1D1D1;" BorderPane.alignment="CENTER">
                <children>
                   <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="login" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Login">
+<!--            <VBox prefHeight="542.0" prefWidth="139.0" style="-fx-background-color: #85B6EF;" BorderPane.alignment="CENTER">-->
+
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
                   <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="addUngVien" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Đăng ký ứng viên">
+
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onMouseClicked="#handleButtonAction" id="pageAdvertise" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Advertisement">
+                  <Button mnemonicParsing="false" onMouseClicked="#handleButtonAction" id="ViewQuangCao" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Xem toàn bộ Quảng cáo">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin></Button>
                   <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="cv" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="CV">
+
                      <VBox.margin>
                         <Insets />
-                     </VBox.margin>
-                  </Button>
+                     </VBox.margin></Button>
+
                   <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="profile" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Profile">
+
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="recruitment" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Recruitment">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="recruitment" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Tin đăng tuyển">
+
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Button>
                   <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="addRecruite" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add  Recruite">
+
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -56,7 +66,7 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="contractExpires" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Contract expires">
+                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="contractExpires" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Hợp đồng hết hạn">
                      <opaqueInsets>
                         <Insets top="2.0" />
                      </opaqueInsets>
@@ -64,7 +74,8 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="addPolicy" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Add preferential policy">
+
+                  <Button mnemonicParsing="false" onMouseClicked="#handleButtonAction" id="policyList"  prefHeight="67.75" prefWidth="139.0" stylesheets="@../../../../java/css/styling.css" text="Chính sách ưu đãi">
                      <opaqueInsets>
                         <Insets top="2.0" />
                      </opaqueInsets>
@@ -76,11 +87,13 @@
                   </Button>
 
 
+
                </children>
             </VBox>
          </left>
          <top>
             <HBox prefHeight="47.0"  prefWidth="972.0" style="-fx-background-color: #D1D1D1;" BorderPane.alignment="CENTER">
+
                <children>
                   <ImageView fitHeight="43.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -102,14 +115,15 @@
 
 
                <!-- Phần nhỏ đè lên (foreground) -->
-               <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" >
-                  <children>
-                     <Label layoutX="216.0" layoutY="168.0" text="advertise" wrapText="true" />
-                  </children>
+               <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0">
                   <padding>
-                     <Insets top="40" right="40" bottom="40" left="40"/>
+                     <Insets bottom="40" left="40" right="40" top="40" />
                   </padding>
+               <children>
+
+               </children>
                </AnchorPane>
+
 
 
 

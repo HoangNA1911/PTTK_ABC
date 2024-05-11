@@ -76,8 +76,8 @@ public class ThemThongTinDangTuyenService implements Initializable {
 
 
         for (doanhNghiepDto DN : DNList) {
-            String ten = DN.getTen_cty();
-            int maDN = DN.getMa_dn();
+            String ten = DN.getten_cty();
+            int maDN = DN.getma_doanh_nghiep();
             TenDNComboBox.getItems().add(ten);
             DoanhNghiepMap.put(ten, maDN);
         }

@@ -1,5 +1,10 @@
 package com.example.pttk_project;
 
+import com.example.pttk_project.dao.thongTinDangTuyenDao;
+import com.example.pttk_project.dto.ThongTinDangTuyen;
+import com.example.pttk_project.services.xemCVService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,9 +16,20 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -28,6 +44,7 @@ public class HomepageController implements Initializable {
 
 
     @FXML
+
     private void handleButtonAction(MouseEvent event) throws IOException {
         String username = UserSingleton.getInstance().getUsername();
         String password = UserSingleton.getInstance().getPassword();
@@ -37,7 +54,7 @@ public class HomepageController implements Initializable {
         if (username == null || password == null) {
             if (event.getSource() instanceof Parent source) {
                 String page = source.getId();
-                if (Objects.equals(page, "addUngVien") || Objects.equals(page, "login") ){
+                if (Objects.equals(page, "addUngVien") || Objects.equals(page, "login")) {
                     isADDUVPage = true;
                 }
             }
@@ -53,7 +70,7 @@ public class HomepageController implements Initializable {
                     loadpage(page);
                 }
             }
-        } else if(!isUngVien) {
+        } else if (!isUngVien) {
             if (event.getSource() instanceof Parent source) {
                 String page = source.getId();
                 loadpage(page);
@@ -72,6 +89,7 @@ public class HomepageController implements Initializable {
         }
     }
 
+
     private void loadpage(String page) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(page + ".fxml")));
         bp.setCenter(root);
@@ -86,5 +104,9 @@ public class HomepageController implements Initializable {
         }
         BorderPane.setMargin(ap, new Insets(40, 40, 40, 40));
 
+
     }
+
+
+
 }
