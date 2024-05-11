@@ -15,7 +15,7 @@
    <children>
       <BorderPane fx:id="bp" prefHeight="604.0" prefWidth="972.0" stylesheets="@../../../../java/css/styling.css">
          <left>
-            <VBox prefHeight="353.0" prefWidth="139.0" style="-fx-background-color: #85B6EF;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="353.0" prefWidth="139.0" style="-fx-background-color: #D1D1D1;" BorderPane.alignment="CENTER">
                <children>
                   <Button mnemonicParsing="false"  onMouseClicked="#handleButtonAction" id="login" prefHeight="39.0" prefWidth="150.0" stylesheets="@../../../../java/css/styling.css" text="Login">
                      <VBox.margin>
@@ -80,7 +80,7 @@
             </VBox>
          </left>
          <top>
-            <HBox prefHeight="47.0"  prefWidth="972.0" style="-fx-background-color: #6690C1;" BorderPane.alignment="CENTER">
+            <HBox prefHeight="47.0"  prefWidth="972.0" style="-fx-background-color: #D1D1D1;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="43.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                      <image>

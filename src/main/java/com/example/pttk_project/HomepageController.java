@@ -32,13 +32,27 @@ public class HomepageController implements Initializable {
         String username = UserSingleton.getInstance().getUsername();
         String password = UserSingleton.getInstance().getPassword();
         boolean isUngVien = UserSingleton.getInstance().getIsUngVien();
+        boolean isADDUVPage = false;
 
         if (username == null || password == null) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning");
-            alert.setHeaderText(null);
-            alert.setContentText("Xin hãy đăng nhập trước!");
-            alert.showAndWait();
+            if (event.getSource() instanceof Parent source) {
+                String page = source.getId();
+                if (Objects.equals(page, "addUngVien") || Objects.equals(page, "login") ){
+                    isADDUVPage = true;
+                }
+            }
+            if (!isADDUVPage) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText("Xin hãy đăng nhập trước!");
+                alert.showAndWait();
+            } else {
+                if (event.getSource() instanceof Parent source) {
+                    String page = source.getId();
+                    loadpage(page);
+                }
+            }
         } else if(!isUngVien) {
             if (event.getSource() instanceof Parent source) {
                 String page = source.getId();
