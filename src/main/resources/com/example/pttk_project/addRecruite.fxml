@@ -2,172 +2,73 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
-<GridPane alignment="center" hgap="10" style="-fx-background-color: #6690C1;" vgap="10" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pttk_project.services.ThemThongTinDangTuyenService">
-
-   <columnConstraints>
-      <ColumnConstraints percentWidth="60.0" />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints percentHeight="10.0" />
-      <RowConstraints percentHeight="80.0" />
-      <RowConstraints percentHeight="10.0" />
-
-   </rowConstraints>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-   <VBox spacing="10" GridPane.rowIndex="1">
-      <GridPane style="-fx-padding: 0 0 20 0;">
-         <HBox spacing="5" GridPane.rowIndex="0">
-            <Label style="-fx-font-weight: bold;" text="Tên Doanh nghiệp" />
-            <Label style="-fx-text-fill: red;" text="*" />
-
-         </HBox>
-
-         <HBox spacing="5" GridPane.rowIndex="1">
-            <ComboBox fx:id="TenDNComboBox" prefHeight="28.0" prefWidth="235.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;" />
-
-         </HBox>
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
-      </GridPane>
-
-      <GridPane style="-fx-padding: 0 0 20 0;">
-         <HBox spacing="5" GridPane.rowIndex="0">
-            <Label style="-fx-font-weight: bold;" text="Tên vị trí cần tuyển" />
-            <Label style="-fx-text-fill: red;" text="*" />
-
-         </HBox>
-
-         <HBox spacing="5" GridPane.rowIndex="1">
-            <ComboBox fx:id="TenViTriComboBox" prefHeight="28.0" prefWidth="235.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;" />
-
-         </HBox>
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
-      </GridPane>
-
-      <GridPane style="-fx-padding: 0 0 20 0;">
-
-         <!-- Hàng 2 -->
-         <HBox spacing="5" GridPane.rowIndex="1" />
-         <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <Label style="-fx-font-weight: bold;" text="Hình thức" />
-            <ComboBox fx:id="taxCodeComboBox" prefHeight="28.0" prefWidth="235.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;" />
-         </VBox>
-
-   
-   
-         <HBox prefWidth="312.0" spacing="5" style="-fx-padding: 0 0 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="2">
-            <VBox GridPane.columnIndex="1" GridPane.rowIndex="2" spacing="5">
-               <Label prefHeight="8.0" style="-fx-font-weight: bold;" text="Số lượng" />
-               <TextField fx:id="SoLuongTextField" prefHeight="28.0" prefWidth="235.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;"  />
-
-            </VBox>
-         </HBox>
-
-         <HBox spacing="5" />
-
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
-      </GridPane>
-
-      <GridPane style="-fx-padding: 0 0 20 0;">
-
-         <HBox spacing="5" GridPane.rowIndex="1" />
-         <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <Label style="-fx-font-weight: bold;" text="Ngày bắt đầu" />
-            <DatePicker fx:id="startDatePicker" prefHeight="28.0" prefWidth="235.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;" />
-         </VBox>
-
-         <HBox prefWidth="312.0" spacing="5" style="-fx-padding: 0 0 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="2">
-            <VBox GridPane.columnIndex="1" GridPane.rowIndex="2" spacing="5">
-               <Label prefHeight="8.0" style="-fx-font-weight: bold;" text="Ngày kết thúc" />
-               <DatePicker fx:id="endDatePicker" prefHeight="28.0" prefWidth="235.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;"  />
-            </VBox>
-         </HBox>
-
-         <HBox spacing="5" />
-
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
-      </GridPane>
-
-
-
-
-
-
-
-
-
-      <HBox spacing="5" />
-
-      <GridPane style="-fx-padding: 0 0 20 0;">
-         <HBox spacing="5" GridPane.rowIndex="0">
-
-            <Label style="-fx-font-weight: bold;" text="Yêu cầu công ty" />
-            <Label style="-fx-text-fill: red;" text="*" />
-
-         </HBox>
-
-         <!-- Hàng 2 -->
-         <HBox spacing="5" GridPane.rowIndex="1" HBox.hgrow="ALWAYS">
-            <TextField fx:id="YeuCauTextField" prefHeight="116.0" prefWidth="829.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 5px;" />
-         </HBox>
-         <columnConstraints>
-            <ColumnConstraints hgrow="ALWAYS" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
-      </GridPane>
-      <CheckBox style="-fx-padding: 0 0 20 0; -fx-text-fill: white;" text="Tôi đã đọc tất cả các điều khoản và các chính sách của công ty ABC và tỗi đã đồng ý trừ khi tổ chức của tôi có thỏa thuận bằng văn bản riêng với ABC Inc. trong trường hợp đó các điều khoản riêng đó sẽ được áp dụng. " wrapText="true" />
-   </VBox>
-   <Button fx:id="registerButton" text="Thêm" GridPane.rowIndex="2" />
-   <Button fx:id="cancelButton" text="Hủy" GridPane.rowIndex="2" />
-
-
-</GridPane>
+<AnchorPane fx:id="YeuCauTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="972.0" style="-fx-background-color: #6690c1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ComboBox fx:id="TenDNComboBox" layoutX="150.0" layoutY="123.0" prefHeight="26.0" prefWidth="279.0" />
+      <ComboBox fx:id="taxCodeComboBox" layoutX="150.0" layoutY="207.0" prefHeight="26.0" prefWidth="279.0" />
+      <DatePicker fx:id="startDatePicker" layoutX="150.0" layoutY="292.0" prefHeight="26.0" prefWidth="279.0" />
+      <DatePicker fx:id="endDatePicker" layoutX="505.0" layoutY="293.0" prefHeight="26.0" prefWidth="258.0" />
+      <TextField fx:id="YeuCauTextField" layoutX="150.0" layoutY="380.0" prefHeight="66.0" prefWidth="616.0" />
+      <TextField fx:id="SoLuongTextField" layoutX="505.0" layoutY="208.0" prefHeight="26.0" prefWidth="258.0" />
+      <CheckBox layoutX="150.0" layoutY="475.0" mnemonicParsing="false" text="Tôi đã đọc tất cả các điều khoản, chính sách và tôi đồng ý" />
+      <ComboBox fx:id="TenViTriComboBox" layoutX="505.0" layoutY="123.0" prefHeight="26.0" prefWidth="258.0" />
+      <Button fx:id="cancelButton" layoutX="519.0" layoutY="525.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Hủy" />
+      <Button fx:id="registerButton" layoutX="263.0" layoutY="525.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Đăng ký" />
+      <Label layoutX="150.0" layoutY="97.0" text="Tên công ty">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="97.0" text="Vị trí cần tuyển">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="183.0" text="Hình thức">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="182.0" text="Số lượng">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="152.0" layoutY="265.0" text="Ngày bắt đầu">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="268.0" text="Ngày kết thúc">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="353.0" text="Yêu cầu">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="294.0" layoutY="35.0" text="THÊM THÔNG TIN ĐĂNG TUYỂN">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Text fill="#e70707" layoutX="222.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="#f70606" layoutX="597.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="#ec0303" layoutX="213.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="#ea0808" layoutX="561.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="#f20909" layoutX="198.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="#e40707" layoutX="232.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+      <Text fill="#ea0b0b" layoutX="588.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+   </children>
+</AnchorPane>
