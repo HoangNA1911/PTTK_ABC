@@ -90,7 +90,13 @@ public class XemTTDangTuyen_CV {
                 }
             }
         });
+
+        searchTT.textProperty().addListener((observable, oldValue, newValue) -> {
+            searchTTT(newValue);
+        });
     }
+
+
 
     private void loadPageWithRoot(String page, int num, String tenCongty, String place) {
         try {
@@ -131,5 +137,15 @@ public class XemTTDangTuyen_CV {
         ThongTinDangTuyenTableView.setItems(FXCollections.observableList(ThongTinDangTuyenList));
 
     }
+
+    private void searchTTT(String searchText) {
+        thongTinDangTuyenDao loader = new thongTinDangTuyenDao();
+        List<ThongTinDangTuyen> ThongTinDangTuyenList = loader.getAllThongTinDangTuyen2(searchText);
+
+
+        ThongTinDangTuyenTableView.setItems(FXCollections.observableList(ThongTinDangTuyenList));
+
+    }
+
 
 }
