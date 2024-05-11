@@ -12,10 +12,10 @@ public class connectionSQL {
 
 
 
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:13306/PTTK?allowPublicKeyRetrieval=true&useSSL=false";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/HTQL_HoSo_UT?allowPublicKeyRetrieval=true&useSSL=false";
 
     private static final String DATABASE_USERNAME = "root";
-    private static final String DATABASE_PASSWORD = "123456aB";
+    private static final String DATABASE_PASSWORD = "12345678";
 
 
 
