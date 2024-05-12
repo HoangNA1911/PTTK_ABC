@@ -22,5 +22,25 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
+      <Label layoutX="87.0" layoutY="69.0" text="Tên doanh nghiệp:">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="111.0" text="Vị trí:">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="com" layoutX="278.0" layoutY="69.0" text="text">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="place" layoutX="149.0" layoutY="111.0" text="text">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -22,6 +22,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import java.sql.Connection;
@@ -54,7 +55,10 @@ public class xemCVService {
     private TableColumn<HoSoUngTuyen, String> trang_thai;
     @FXML
     private TableColumn<HoSoUngTuyen, String> level;
-
+    @FXML
+    private Label place;
+    @FXML
+    private Label com;
     private ObservableList<HoSoUngTuyen> HoSoUngTuyenList = FXCollections.observableArrayList();
     @FXML
     public void initialize() {
@@ -68,7 +72,7 @@ public class xemCVService {
     }
 
 
-    public void receiveSelectedRowData(int selectedRowData) {
+    public void receiveSelectedRowData(int selectedRowData,String ten, String placee) {
         // Process the received data herenhansuList.clear();
         //        loadNhansuFromDatabase();
         //        nhansuTableView.refresh();
@@ -76,7 +80,8 @@ public class xemCVService {
         System.out.println("Received selected row data: " + selectedRowData);
         loadHoSoUngTuyenFromDatabase2(selectedRowData);
         //System.out.println("5");
-
+        place.setText(placee);
+        com.setText(ten);
 
     }
 
